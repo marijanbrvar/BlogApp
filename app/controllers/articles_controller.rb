@@ -4,8 +4,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @article = Article.new
@@ -21,8 +20,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @article.update(article_params)
@@ -30,7 +28,6 @@ class ArticlesController < ApplicationController
     else
       render :edit
     end
-
   end
 
   private
@@ -39,7 +36,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-    def article_params
-      params.require(:article).permit(:title, :body)
-    end
+  def article_params
+    params.require(:article).permit(:title, :body)
+  end
 end

@@ -1,4 +1,4 @@
-<h1>New Article</h1>
+<h1>Editing Blog</h1>
 
 <%= form_with model: @article do |form| %>
 <div>
@@ -21,4 +21,5 @@
 </div>
 <% end %>
 
+<%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>
