@@ -4,6 +4,7 @@
   <% @articles.each do |article| %>
   <li>
     <%= link_to article.title, article %>
+    <%= link_to "Delete Article", article, method: :delete, data: {confirm: "Are you sure?" } %>
   </li>
   <% end %>
 </ul>

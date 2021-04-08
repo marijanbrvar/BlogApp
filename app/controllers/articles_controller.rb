@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[show edit update]
+  before_action :set_article, only: %i[show edit update destroy]
   def index
     @articles = Article.all
   end
@@ -27,6 +27,13 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @article.destroy
+    respond_to do |format|
+      format.html { redirect_to articles_url, notice: "Article successfully deleted"}
     end
   end
 
